@@ -1,0 +1,13 @@
+app: 
+  name: producer-manifest-svc
+  replicas: 2
+  host: pmsvc.kp-test.com
+  gateway: nginx.kp-test.com
+  inbound: 1111
+  healthcheck: 
+    enabled: true
+registry: 
+  uri: kpedpdevops02acs01.azurecr.io
+docker: 
+  image: kp-producer-manifest-svc
+  version: latest

@@ -1,0 +1,6 @@
+app: 
+  replicas: 2
+  processes: 3
+  logLevel: info
+  host: nginx.kp-test.com
+  lbInternal: false

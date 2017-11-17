@@ -1,0 +1,9 @@
+name: kp-app
+version: 1.0.0
+description: KP applications component
+keywords: 
+  - edp
+  - component 
+maintainers: 
+  - name: Vlad Korniev
+    email: vkorn@softserveinc.com

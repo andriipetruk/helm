@@ -1,0 +1,11 @@
+app: 
+  name: dashboard-ui
+  replicas: 2
+  host: dashboard.kp-test.com
+  gateway: nginx.kp-test.com
+  inbound: 80
+registry: 
+  uri: kpedpdevops02acs01.azurecr.io
+docker: 
+  image: kp-dashboard-ui
+  version: latest

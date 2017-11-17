@@ -1,0 +1,13 @@
+app: 
+  name: metrics-mart-svc
+  replicas: 2
+  host: mmsvc.kp-test.com
+  gateway: nginx.kp-test.com
+  inbound: 3333
+  healthcheck: 
+    enabled: true
+registry: 
+  uri: kpedpdevops02acs01.azurecr.io
+docker: 
+  image: kp-metrics-mart-svc
+  version: latest

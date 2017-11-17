@@ -1,0 +1,44 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels: 
+    app: {{ template "fullname" . }}
+spec:
+  replicas: {{ .Values.app.replicas }}
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+    spec:
+      volumes:
+        - name: config
+          secret:
+            secretName: {{ .Values.generic.confSecret }} 
+      containers:
+        - name: {{ template "fullname" . }}
+          image: {{ .Values.docker.image }}
+          imagePullPolicy: Always
+          volumeMounts:
+            - mountPath: /etc/kubernetes
+              name: config
+              readOnly: true
+          args:
+            - --source=ingress
+            - --source=service
+            - --domain-filter={{ .Values.app.domainFilter }} 
+            - --provider=azure
+            - --azure-resource-group={{ .Values.az.resourceGroup }}
+            - --policy=sync
+            - --interval={{ .Values.app.syncInterval }}
+            - --publish-internal-services
+            - --txt-prefix=kp
+            - --txt-owner-id=infra
+
+{{- if .Values.app.debug }}
+
+            - --log-level=debug
+
+{{- end }}

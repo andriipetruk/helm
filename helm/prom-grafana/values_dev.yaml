@@ -1,0 +1,22 @@
+prometheus: 
+  server: 
+    name: prom-server
+    replicaCount: 1
+    retention: "72h"
+
+grafana:
+  server:
+    adminUser: "admin1"
+    adminPassword: "kai53r$"
+    ingress:
+      annotations: 
+        external-dns.alpha.kubernetes.io/target: nginx.kp-test.com
+      hosts:
+        - grafana.kp-test.com
+      tls: 
+        - secretName: ssl-cert
+          hosts:
+            - grafana.kp-test.com
+    setDatasource:
+      datasource:
+        url:  http://monitor-prometheus-prom-server.default.svc.cluster.local

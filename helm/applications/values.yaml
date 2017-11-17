@@ -1,0 +1,27 @@
+app: 
+  name: change_me
+  replicas: 2
+  inbound: 80
+  host: change_me
+  gateway: change_me
+  healthcheck: 
+    enabled: false
+    uri: /health
+    readiness: 20
+    timeout: 1
+    period: 5
+docker: 
+  image: kp-dashboard-ui
+  version: latest
+registry: 
+  uri: change_me
+  # Secret name created via kubectl
+  secret: registry-auth
+generic:
+  # Secret name created via kubectl
+  certSecret: ssl-cert
+  akvSecret: 
+    name: akv-secret
+    clientId: client_id
+    clientSecret: client_secret
+    vaultUrl: url

@@ -1,0 +1,13 @@
+app: 
+  name: auth-service
+  replicas: 2
+  host: authsvc.kp-test.com
+  gateway: nginx.kp-test.com
+  inbound: 4444
+  healthcheck: 
+    enabled: true
+registry: 
+  uri: kpedpdevops02acs01.azurecr.io
+docker: 
+  image: metricsmart-authentication-service
+  version: latest
