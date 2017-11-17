@@ -1,8 +1,0 @@
-name: monitoring
-version: 1.0.0
-description: Monitoring utilities
-keywords: 
-  - infra
-maintainers: 
-  - name: Vlad Korniev
-    email: vkorn@softserveinc.com

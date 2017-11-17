@@ -1,8 +1,0 @@
-name: external-dns
-version: 1.0.0
-description: Azure DNS registration
-keywords: 
-  - infra
-maintainers: 
-  - name: Vlad Korniev
-    email: vkorn@softserveinc.com

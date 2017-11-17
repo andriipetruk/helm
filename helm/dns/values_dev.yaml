@@ -1,7 +1,0 @@
-az:
-  resourceGroup: kp-edp-devops02_acs01
-app:
-  domainFilter: kp-test.com
-  replicas: 1
-  debug: true
-  syncInterval: 1m

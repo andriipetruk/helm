@@ -1,8 +1,0 @@
-name: nginx
-version: 1.0.0
-description: Nginx ingress controller
-keywords: 
-  - infra
-maintainers: 
-  - name: Vlad Korniev
-    email: vkorn@softserveinc.com
