@@ -1,6 +1,6 @@
 app: 
-  name: change_me
-  replicas: 2
+  name: #name
+  replicas: #replicas
   inbound: 80
   host: change_me
   gateway: change_me
@@ -11,10 +11,10 @@ app:
     timeout: 1
     period: 5
 docker: 
-  image: kp-dashboard-ui
-  version: latest
+  image: #image
+  version: #img_tag
 registry: 
-  uri: change_me
+  uri: #reg_url
   # Secret name created via kubectl
   secret: registry-auth
 generic:
